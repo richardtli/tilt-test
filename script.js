@@ -21,6 +21,7 @@ function askPermission() {
           const gamma = Math.floor(event.gamma); // gamma: left to right
           const beta = Math.floor(event.beta); // beta: front back motion
           handleOrientationEvent(gamma - first_gamma, beta - first_beta);
+          FIRST_ITER = false;
         },
         true
       );
