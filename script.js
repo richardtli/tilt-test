@@ -1,5 +1,7 @@
 const info = document.querySelector(".info");
 const center = document.querySelector(".center");
+const MAX_X_CHANGE = 90
+const MAX_Y_CHANGE = 90
 document.querySelector(".permission").addEventListener('click', () => {
     askPermission()
 })
@@ -22,7 +24,13 @@ function askPermission() {
 
 const handleOrientationEvent = (gamma, beta) => {
   info.innerText = `Beta: ${beta}, Gamma: ${gamma}`;
-  if (beta <= 90 && beta >= -90){
+  if (beta <= 89 && beta >= -89){
     center.style.transform = `translate(${gamma}px,${beta}px)`
+  }
+  else if (beta >= 90) {
+    center.style.transform = `translate(${gamma}px,${MAX_X_CHANGE}px)`
+  }
+  else if (beta <= -90) {
+    center.style.transform = `translate(${gamma}px,${-MAX_X_CHANGE}px)`
   }
 };
