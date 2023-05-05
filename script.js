@@ -6,13 +6,13 @@ document.querySelector(".permission").addEventListener('click', () => {
 function askPermission() {
   DeviceOrientationEvent.requestPermission().then((response) => {
     if (response == "granted") {
+      let initial = DeviceOrientationEvent.beta
       window.addEventListener(
         "deviceorientation",
         (event) => {
-          const rotateDegrees = event.alpha; // alpha: rotation around z-axis
-          const leftToRight = event.gamma; // gamma: left to right
-          const frontToBack = event.beta; // beta: front back motion
-          handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+          const leftToRight = Math.floor(event.gamma); // gamma: left to right
+          const frontToBack = Math.floor(event.beta); // beta: front back motion
+          handleOrientationEvent(frontToBack, leftToRight, initial);
         },
         true
       );
@@ -21,6 +21,6 @@ function askPermission() {
 }
 
 
-const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => {
-  info.innerText = `Alpha: ${rotateDegrees}, Beta: ${frontToBack}, Gamma: ${leftToRight}`;
+const handleOrientationEvent = (frontToBack, leftToRight, intial) => {
+  info.innerText = `Beta: ${frontToBack}, Gamma: ${leftToRight},  Initial:${intial}`;
 };
