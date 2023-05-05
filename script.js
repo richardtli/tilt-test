@@ -6,7 +6,7 @@ document.querySelector(".permission").addEventListener('click', () => {
 function askPermission() {
   DeviceOrientationEvent.requestPermission().then((response) => {
     if (response == "granted") {
-      let initial = DeviceOrientationEvent.beta
+      let initial = window.DeviceOrientationEvent.beta
       window.addEventListener(
         "deviceorientation",
         (event) => {
