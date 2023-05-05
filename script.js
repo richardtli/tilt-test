@@ -2,7 +2,6 @@ const info = document.querySelector(".info");
 document.querySelector(".permission").addEventListener('click', () => {
     askPermission()
 })
-
 function askPermission() {
   DeviceOrientationEvent.requestPermission().then((response) => {
     if (response == "granted") {
