@@ -23,7 +23,7 @@ function askPermission() {
           let rel_beta = beta - first_beta
           let rel_gamma = gamma - first_gamma
           if (beta >=90) {
-            rel_gamma *= -1
+            rel_gamma += 180
           }
           handleOrientationEvent(rel_gamma, rel_beta);
           FIRST_ITER = false;
