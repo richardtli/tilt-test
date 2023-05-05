@@ -22,7 +22,7 @@ function askPermission() {
           const beta = Math.floor(event.beta); // beta: front back motion
           let rel_beta = beta - first_beta
           let rel_gamma = gamma - first_gamma
-          if(beta < 90 && beta > -90) {
+          if(beta < 86 && beta > -86) {
             handleOrientationEvent(rel_gamma, rel_beta);
           }
           FIRST_ITER = false;
