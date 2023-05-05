@@ -1,5 +1,5 @@
 const info = document.querySelector(".info");
-document.querySelector(".permission").addEventListener('onclick', () => {
+document.querySelector(".permission").addEventListener('click', () => {
     askPermission()
 })
 
