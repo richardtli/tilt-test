@@ -22,5 +22,5 @@ function askPermission() {
 
 const handleOrientationEvent = (frontToBack, leftToRight) => {
   info.innerText = `Beta: ${frontToBack}, Gamma: ${leftToRight}`;
-  center.style.transform = `translateX(${leftToRight}px translateY(${frontToBack}px)`
+  center.style.transform = `translate(${leftToRight}px,${frontToBack}px)`
 };
