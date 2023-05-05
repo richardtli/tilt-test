@@ -24,13 +24,13 @@ function askPermission() {
 
 const handleOrientationEvent = (gamma, beta) => {
   info.innerText = `Beta: ${beta}, Gamma: ${gamma}`;
-  if (beta <= 89 && beta >= -89){
+  if (beta <= 85 && beta >= -85){
     center.style.transform = `translate(${gamma}px,${beta}px)`
   }
-  else if (beta >= 90) {
-    center.style.transform = `translate(${gamma}px,${MAX_X_CHANGE}px)`
-  }
-  else if (beta <= -90) {
-    center.style.transform = `translate(${gamma}px,${-MAX_X_CHANGE}px)`
-  }
+  // else if (beta >= 90) {
+  //   center.style.transform = `translate(${gamma}px,${MAX_X_CHANGE}px)`
+  // }
+  // else if (beta <= -90) {
+  //   center.style.transform = `translate(${gamma}px,${-MAX_X_CHANGE}px)`
+  // }
 };
