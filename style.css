@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    width: 100vw;
+    height: 100vh;
+}
+
+.center {
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+}
+
+.info {
+    position: absolute;
+    color: white;
+    top: 5px;
+}
