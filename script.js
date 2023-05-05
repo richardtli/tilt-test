@@ -20,7 +20,12 @@ function askPermission() {
           }
           const gamma = Math.floor(event.gamma); // gamma: left to right
           const beta = Math.floor(event.beta); // beta: front back motion
-          handleOrientationEvent(gamma - first_gamma, beta - first_beta);
+          let rel_beta = beta - first_beta
+          let rel_gamma = gamma - first_gamma
+          if (beta >=90) {
+            rel_gamma = gamma + first_gamma
+          }
+          handleOrientationEvent(rel_gamma, rel_beta);
           FIRST_ITER = false;
         },
         true
