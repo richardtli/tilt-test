@@ -1,17 +1,17 @@
 const info = document.querySelector(".info");
+const center = document.querySelector(".center");
 document.querySelector(".permission").addEventListener('click', () => {
     askPermission()
 })
 function askPermission() {
   DeviceOrientationEvent.requestPermission().then((response) => {
     if (response == "granted") {
-      let initial = window.DeviceOrientationEvent.beta
       window.addEventListener(
         "deviceorientation",
         (event) => {
           const leftToRight = Math.floor(event.gamma); // gamma: left to right
           const frontToBack = Math.floor(event.beta); // beta: front back motion
-          handleOrientationEvent(frontToBack, leftToRight, initial);
+          handleOrientationEvent(frontToBack, leftToRight);
         },
         true
       );
@@ -20,6 +20,7 @@ function askPermission() {
 }
 
 
-const handleOrientationEvent = (frontToBack, leftToRight, intial) => {
-  info.innerText = `Beta: ${frontToBack}, Gamma: ${leftToRight},  Initial:${intial}`;
+const handleOrientationEvent = (frontToBack, leftToRight) => {
+  info.innerText = `Beta: ${frontToBack}, Gamma: ${leftToRight}`;
+  center.style.transform = `translateX(${leftToRight}px)`
 };
