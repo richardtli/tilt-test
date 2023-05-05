@@ -23,6 +23,6 @@ function askPermission() {
 const handleOrientationEvent = (gamma, beta) => {
   info.innerText = `Beta: ${beta}, Gamma: ${gamma}`;
   if (beta <= 90 && beta >= -90){
-    center.style.transform = `translate(${beta}px,${gamma}px)`
+    center.style.transform = `translate(${gamma}px,${beta}px)`
   }
 };
