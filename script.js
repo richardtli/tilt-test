@@ -2,6 +2,9 @@ const info = document.querySelector(".info");
 const center = document.querySelector(".center");
 const MAX_X_CHANGE = 90
 const MAX_Y_CHANGE = 90
+const FIRST_ITER = true
+let first_beta = 0
+let first_gamma = 0
 document.querySelector(".permission").addEventListener('click', () => {
     askPermission()
 })
@@ -11,9 +14,13 @@ function askPermission() {
       window.addEventListener(
         "deviceorientation",
         (event) => {
+          if (FIRST_ITER){ 
+            first_beta = Math.floor(event.beta)
+            first_gamma = Math.floor(event.gamma)
+          }
           const gamma = Math.floor(event.gamma); // gamma: left to right
           const beta = Math.floor(event.beta); // beta: front back motion
-          handleOrientationEvent(gamma, beta);
+          handleOrientationEvent(gamma - first_gamma, beta - first_beta);
         },
         true
       );
