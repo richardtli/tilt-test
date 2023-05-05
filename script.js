@@ -22,7 +22,7 @@ function askPermission() {
           }
           const gamma = Math.floor(event.gamma); // gamma: left to right
           const beta = Math.floor(event.beta); // beta: front back motion
-          if(beta < 80 && beta > 2* first_beta - 80){
+          if(beta < 80 && beta > first_beta - first_beta_distance_from_90){
             let rel_beta = beta - first_beta
             let rel_gamma = gamma - first_gamma
             handleOrientationEvent(rel_gamma, rel_beta);
