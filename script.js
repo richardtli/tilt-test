@@ -8,7 +8,7 @@ if (window.DeviceOrientationEvent) {
         const leftToRight = event.gamma; // gamma: left to right
         const frontToBack = event.beta; // beta: front back motion
   
-        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+        //handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
       },
       true
     );
@@ -17,3 +17,5 @@ if (window.DeviceOrientationEvent) {
   const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => {
     info.innerText = `Alpha: ${rotateDegrees}, Beta: ${frontToBack}, Gamma: ${leftToRight}`
   };
+
+  info.innerText = window.DeviceOrientationEvent
