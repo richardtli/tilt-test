@@ -23,3 +23,8 @@ body {
     color: white;
     top: 5px;
 }
+
+.permission {
+    position: absolute;
+    left: 5px;
+}
