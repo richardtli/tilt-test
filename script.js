@@ -9,9 +9,9 @@ function askPermission() {
       window.addEventListener(
         "deviceorientation",
         (event) => {
-          const leftToRight = Math.floor(event.gamma); // gamma: left to right
-          const frontToBack = Math.floor(event.beta); // beta: front back motion
-          handleOrientationEvent(frontToBack, leftToRight);
+          const gamma = Math.floor(event.gamma); // gamma: left to right
+          const beta = Math.floor(event.beta); // beta: front back motion
+          handleOrientationEvent(gamma, beta);
         },
         true
       );
@@ -20,7 +20,9 @@ function askPermission() {
 }
 
 
-const handleOrientationEvent = (frontToBack, leftToRight) => {
-  info.innerText = `Beta: ${frontToBack}, Gamma: ${leftToRight}`;
-  center.style.transform = `translate(${leftToRight}px,${frontToBack}px)`
+const handleOrientationEvent = (gamma, beta) => {
+  info.innerText = `Beta: ${beta}, Gamma: ${gamma}`;
+  if (beta <= 90 && beta >= -90){
+    center.style.transform = `translate(${beta}px,${gamma}px)`
+  }
 };
