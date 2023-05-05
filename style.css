@@ -16,7 +16,7 @@ body {
     width: 20px;
     height: 20px;
     background-color: aqua;
-    transition: transform 0.1s linear
+    transition: transform 0.3s linear
 }
 
 .info {
